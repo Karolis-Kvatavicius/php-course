@@ -1,5 +1,4 @@
 <?php
-echo 'dfgkok';
 //1
 echo '<h2> Pirma užduotis </h2>';
 $hours = rand(0, 23);
