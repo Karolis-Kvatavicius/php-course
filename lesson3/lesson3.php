@@ -1,4 +1,13 @@
-
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LESSON 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+</head>
+<body>
 
 <?php
 
@@ -41,7 +50,7 @@ for($x = 1; $x <= 3000; $x++) {
 echo '<h2>Fourth</h2>';
 for($i = 0; $i < 100; $i++) {
     for($j = 0; $j < 100; $j++) {
-    print '<span style="font-size: 7px; line-height: 2px;">*</span>';
+    echo '<span>*</span>';
     }
     print '<br>';
 }
@@ -157,14 +166,17 @@ echo '<h2>Seventh</h2>';
 for($i = 0; $i < 100; $i++) {
     for($j = 0; $j < 100; $j++) {
         if($i == 0 || $i == 99) {
-            print '<span style="font-size: 7px; line-height: 2px;">*</span>';
+            print '<span>*</span>';
         } else {
             if($j == 0 || $j == 99) {
-                print '<span style="font-size: 7px; line-height: 2px;">*</span>';
+                print '<span>*</span>';
             } else {
-                print '<span style="font-size: 7px; line-height: 2px; visibility: hidden;">*</span>';  
+                print '<span class="invisible">*</span>';  
             }
         }
     }
     print '<br>';
 }
+?>
+</body>
+</html>

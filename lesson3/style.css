@@ -1,3 +1,10 @@
 span {
     color: red;
+    display: inline-block;
+    font-size: 8px;
+    line-height: 3.2px; 
+}
+
+.invisible {
+    visibility: hidden;
 }
