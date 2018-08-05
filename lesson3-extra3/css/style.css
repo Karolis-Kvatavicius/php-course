@@ -1,4 +1,11 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    background-color: black;
+}
+
 img {
-   min-height: 500px;
-   min-width: 500px;
+height: 100%;
+width: 100vh;
 }
