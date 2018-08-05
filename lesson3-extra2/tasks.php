@@ -13,9 +13,10 @@
 $center = 10;
 $start = 1;
 $end = 19;
+$count = 1;
 
   for($i = 0; $i < 11; $i++) {
-    print '<div class="column">';
+    print '<div class="column" style="opacity: ' .$count. '">';
     for($j = 0; $j < 21; $j++) {
         if($j >= $center - $i && $j <= $center + $i) {
         $span = '<span class="colored" style="color: rgb(' .rand(0, 256). ',' .rand(0, 256). ',' 
@@ -27,9 +28,10 @@ $end = 19;
     }
     print '</div>';
     print '<br>';
+    $count -= 0.05;
 }
 for($i = 0; $i < 10; $i++) {
-    print '<div class="column">';
+    print '<div class="column" style="opacity: ' .$count. '">';
     for($j = 0; $j < 21; $j++) {
         if($j >= $start + $i && $j <= $end - $i) {
             $span = '<span class="colored" style="color: rgb(' .rand(0, 256). ',' .rand(0, 256). ',' 
@@ -41,10 +43,11 @@ for($i = 0; $i < 10; $i++) {
     }
     print '</div>';
     print '<br>';
+    $count -= 0.05;
 }
 ?>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="script.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="script.js"></script> -->
 </body>
 </html>
