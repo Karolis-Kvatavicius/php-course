@@ -3,12 +3,12 @@
         $(this).animate({
             opacity: 0,
           }, 100, function() {
-                return $(this).nextAll(".colored").first().myFunc();
+                return $(this).next().myFunc();
         });       
     }; 
  })( jQuery );
 
 $(window).ready(function() {
-   $('.colored:first').myFunc();
+   $('.column:first').myFunc();
   });
  

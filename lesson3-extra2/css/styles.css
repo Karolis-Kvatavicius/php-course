@@ -1,0 +1,18 @@
+body {
+    padding-top: 60px;
+    padding-left: 60px;
+}
+span {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 11px;
+    overflow: hidden;
+}
+.rhombus {
+    transform: rotate(-90deg);
+    height: 220px;
+    width: 220px;     
+}
+.column {
+    display: inline;
+}

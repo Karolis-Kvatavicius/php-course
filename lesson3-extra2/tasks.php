@@ -15,6 +15,7 @@ $start = 1;
 $end = 19;
 
   for($i = 0; $i < 11; $i++) {
+    print '<div class="column">';
     for($j = 0; $j < 21; $j++) {
         if($j >= $center - $i && $j <= $center + $i) {
         $span = '<span class="colored" style="color: rgb(' .rand(0, 256). ',' .rand(0, 256). ',' 
@@ -24,9 +25,11 @@ $end = 19;
             print '<span style="color: white;">&block;</span>';
         }    
     }
+    print '</div>';
     print '<br>';
 }
 for($i = 0; $i < 10; $i++) {
+    print '<div class="column">';
     for($j = 0; $j < 21; $j++) {
         if($j >= $start + $i && $j <= $end - $i) {
             $span = '<span class="colored" style="color: rgb(' .rand(0, 256). ',' .rand(0, 256). ',' 
@@ -36,6 +39,7 @@ for($i = 0; $i < 10; $i++) {
             print '<span style="color: white;">&block;</span>';
         }     
     }
+    print '</div>';
     print '<br>';
 }
 ?>
