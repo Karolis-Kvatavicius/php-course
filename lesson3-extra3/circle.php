@@ -8,7 +8,7 @@
 </head>
 <body>
  <?php
- $circleSize = 800;
+ $circleSize = 500;
  $canvasSize = 1000;
  $top = 0;
  $bottom = 0;
