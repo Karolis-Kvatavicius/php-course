@@ -51,7 +51,7 @@ for ($i = 0; $i < 10; $i++) {
 }
     print_r($masyvas);
 
-//
+//4-D
     print '</pre>';
   ?>
 </body>
