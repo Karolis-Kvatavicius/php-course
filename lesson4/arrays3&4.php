@@ -10,6 +10,7 @@
 <body>
   <?php
   print '<pre>';
+  print '<h3>Masyvas is 10 masyvu po 5 elementus: </h3><br>';
   $masyvas = [];
   $masyvasViduje = [];
 
@@ -32,7 +33,7 @@
             }
         } 
     }
-    print 'Elementai didesni už 10: ' .$counteris. '<br>';
+    print '<h3>Elementai didesni už 10: ' .$counteris. '</h3><br>';
 
 //max reiksme
   $maxValue = 0;
@@ -43,16 +44,44 @@
             }
         } 
     }
-    print 'Maksimali reiksme: ' .$maxValue. '<br>';
+    print '<h3>Maksimali reiksme: ' .$maxValue. '</h3><br>';
 
 //vidiniai masyvai plius du elementai
+print '<h3>Vidiniai masyvai plius du elementai: </h3><br>';
 for ($i = 0; $i < 10; $i++) { 
     array_push($masyvas[$i], rand(0, 25), rand(0, 25));
 }
     print_r($masyvas);
 
-//4-D
-    print '</pre>';
+//masyvu sumos
+print '<h3>Masyvas su sumomis: </h3><br>';
+$suma = 0;
+$sumuMasyvas = [];
+foreach ($masyvas as $masyvasVidinis) {
+   foreach ($masyvasVidinis as $skaicius) {
+    $suma += $skaicius;
+   }
+   $sumuMasyvas[] = $suma;
+   $suma = 0;
+}
+print_r($sumuMasyvas);
+
+//masyvas, kurio elementai yra indeksu reiksmiu sumos
+print '<h3>Masyvas su indeksu reiksmiu sumomis: </h3><br>';
+$masyvas2 = [];
+$indeksuSuma = 0;
+$indeksas = 0;
+
+while($indeksas < sizeof($masyvas[0])) {
+foreach ($masyvas as $masyvasVidinis) {
+    $indeksuSuma += $masyvasVidinis[$indeksas];
+}
+$masyvas2[] = $indeksuSuma;
+$indeksuSuma = 0;
+$indeksas++;
+}
+print_r($masyvas2);
+print '</pre>';
   ?>
 </body>
 </html>
