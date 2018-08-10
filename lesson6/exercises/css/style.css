@@ -1,0 +1,67 @@
+.radio p, .radio input {
+    display: inline-block;
+    margin: 0;
+}
+
+.radio input {
+   margin-right: 15px; 
+}
+
+/* #btnsubmit {
+    padding-top: 15px;
+} */
+
+#result {
+    color: yellow;
+}
+/* .number-input {
+
+} */
+
+.answerType {
+    padding-left: 150px;
+}
+
+form {
+    display: inline-block;
+}
+
+img {
+    padding-right: 60px;
+}
+
+#animalForm {
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.form {
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.animal {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.submit {
+    padding-top: 20px;
+    padding-left: 80px;  
+}
+
+.question {
+    display: flex;
+    padding: 20px;
+}
