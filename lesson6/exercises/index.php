@@ -74,36 +74,21 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
 } else {
     print '<p style="font-size: 20px; font-weight: bold;"></p>';
 }
-
-
-
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-        <!-- koks tai gyvunas -->
+        <!-- KOKS TAI GYVUNAS -->
         <h1> Apklausa </h1>
-        <div class="">
+        <div>
             <?php
-            $atsakymas = '';
-            $teisingiAtsakymai = 0;
             $visiKlausimai = 4;
-            $procentas = ($teisingiAtsakymai/$visiKlausimai) * 100;
-            // $answers = ['fox', 'lion', 'panda', 'tiger'];
-            $i = 0;
-            $img = ['fox.jpg', 'lion.jpg', 'panda.jpg', 'tiger.jpg'];
-            if (isset($_GET['answer'])) {
-            print '<p id="result">Jūs atsakėte į ' .$teisingiAtsakymai. ' iš 4 klausimų teisingai. Surinkote ' .$procentas. ' %</p>';
+            $atsakymas = '';
+
+            if (isset($_GET['spejam'])) {
+                $teisingiAtsakymai = $_GET['answer'] + $_GET['answer1'] + $_GET['answer2'] + $_GET['answer3'];
+                $procentas = ($teisingiAtsakymai/$visiKlausimai) * 100;
+                print '<p id="result">Jūs atsakėte į ' .$teisingiAtsakymai. ' iš 4 klausimų teisingai. Surinkote ' .$procentas. ' %</p>';
             }
+   
             ?>
         </div>
         <div class="form">
@@ -116,19 +101,19 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                     <div>
                         <h3>Atspėk koks tai gyvūnas</h3>
                         <div class="animal">
-                            <input type="radio" name="answer" value="fox">
+                            <input type="radio" name="answer" value="1" required>
                             <label for="fox">Lapė</label>
                         </div>
                         <div class="animal">
-                            <input type="radio" name="answer" value="tiger">
+                            <input type="radio" name="answer" value="0">
                             <label for="tiger">Tigras</label>
                         </div>
                         <div class="animal">
-                            <input type="radio" name="answer" value="lion">
+                            <input type="radio" name="answer" value="0">
                             <label for="lion">Liūtas</label>
                         </div>
                         <div class="animal">
-                            <input class="animal" type="radio" name="answer" value="panda">
+                            <input type="radio" name="answer" value="0">
                             <label for="panda">Panda</label>
                         </div>
                     </div>
@@ -136,9 +121,8 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                 <?php
                     if (isset($_GET['answer'])) {
                         $atsakymas = $_GET['answer'];
-                        if ($atsakymas == 'fox') {
+                        if ($atsakymas == '1') {
                             echo '<p class="answerType" style="color: green">Jūs atsakėte teisingai.</p>';
-                            $teisingiAtsakymai++;
                         } else {
                             echo '<p class="answerType" style="color: red">Jūsų atsakymas neteisingas.</p>';
                         }
@@ -151,19 +135,19 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                         <div>
                             <h3>Atspėk koks tai gyvūnas</h3>
                             <div class="animal">
-                                <input type="radio" name="answer1" value="fox">
+                                <input type="radio" name="answer1" value="0" required>
                                 <label for="fox">Lapė</label>
                             </div>
                             <div class="animal">
-                                <input type="radio" name="answer1" value="tiger">
+                                <input type="radio" name="answer1" value="0">
                                 <label for="tiger">Tigras</label>
                             </div>
                             <div class="animal">
-                                <input type="radio" name="answer1" value="lion">
+                                <input type="radio" name="answer1" value="1">
                                 <label for="lion">Liūtas</label>
                             </div>
                             <div class="animal">
-                                <input class="animal" type="radio" name="answer1" value="panda">
+                                <input type="radio" name="answer1" value="0">
                                 <label for="panda">Panda</label>
                             </div>
                         </div>
@@ -171,9 +155,8 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                     <?php
                     if (isset($_GET['answer1'])) {
                         $atsakymas = $_GET['answer1'];
-                        if ($atsakymas == 'lion') {
+                        if ($atsakymas == '1') {
                             echo '<p class="answerType" style="color: green">Jūs atsakėte teisingai.</p>';
-                            $teisingiAtsakymai++;
                         } else {
                             echo '<p class="answerType" style="color: red">Jūsų atsakymas neteisingas.</p>';
                         }
@@ -186,19 +169,19 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                             <div>
                                 <h3>Atspėk koks tai gyvūnas</h3>
                                 <div class="animal">
-                                    <input type="radio" name="answer2" value="fox">
+                                    <input type="radio" name="answer2" value="0" required>
                                     <label for="fox">Lapė</label>
                                 </div>
                                 <div class="animal">
-                                    <input type="radio" name="answer2" value="tiger">
+                                    <input type="radio" name="answer2" value="0">
                                     <label for="tiger">Tigras</label>
                                 </div>
                                 <div class="animal">
-                                    <input type="radio" name="answer2" value="lion">
+                                    <input type="radio" name="answer2" value="0">
                                     <label for="lion">Liūtas</label>
                                 </div>
                                 <div class="animal">
-                                    <input class="animal" type="radio" name="answer2" value="panda">
+                                    <input type="radio" name="answer2" value="1">
                                     <label for="panda">Panda</label>
                                 </div>
                             </div>
@@ -206,9 +189,8 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                         <?php
                     if (isset($_GET['answer2'])) {
                         $atsakymas = $_GET['answer2'];
-                        if ($atsakymas == 'panda') {
+                        if ($atsakymas == '1') {
                             echo '<p class="answerType" style="color: green">Jūs atsakėte teisingai.</p>';
-                            $teisingiAtsakymai++;
                         } else {
                             echo '<p class="answerType" style="color: red">Jūsų atsakymas neteisingas.</p>';
                         }
@@ -221,19 +203,19 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                                 <div>
                                     <h3>Atspėk koks tai gyvūnas</h3>
                                     <div class="animal">
-                                        <input type="radio" name="answer3" value="fox">
+                                        <input type="radio" name="answer3" value="0" required>
                                         <label for="fox">Lapė</label>
                                     </div>
                                     <div class="animal">
-                                        <input type="radio" name="answer3" value="tiger">
+                                        <input type="radio" name="answer3" value="1">
                                         <label for="tiger">Tigras</label>
                                     </div>
                                     <div class="animal">
-                                        <input type="radio" name="answer3" value="lion">
+                                        <input type="radio" name="answer3" value="0">
                                         <label for="lion">Liūtas</label>
                                     </div>
                                     <div class="animal">
-                                        <input class="animal" type="radio" name="answer3" value="panda">
+                                        <input type="radio" name="answer3" value="0">
                                         <label for="panda">Panda</label>
                                     </div>
                                     <div class="animal submit">
@@ -244,9 +226,8 @@ if(isset($_GET['operator']) && isset($_GET['X']) && isset($_GET['Y'])) {
                             <?php
                     if (isset($_GET['answer3'])) {
                         $atsakymas = $_GET['answer3'];
-                        if ($atsakymas == 'tiger') {
+                        if ($atsakymas == '1') {
                             echo '<p class="answerType" style="color: green">Jūs atsakėte teisingai.</p>';
-                            $teisingiAtsakymai++;
                         } else {
                             echo '<p class="answerType" style="color: red">Jūsų atsakymas neteisingas.</p>';
                         }
